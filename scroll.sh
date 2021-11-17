@@ -12,20 +12,20 @@ scroll() {
   local window="${2:-4}"
   local pad_message
   pad_message="$(printf "%*s%s%-*s" "${window}" "" "${1:-message}" "${window}" "")"
-  local speed="${3:-0.1}"
-  local direction="${4:-0}"
   local length="${#pad_message}"
 
   tput sc
+  tput civis
   for i in $(seq 0 1 $(( length - window )))
   do
     # Reverse text flow if direction flag is not even number
-    [[ $(( "${direction}" % 2 )) -ne 0 ]] && i=$(( length - window - i ))
+    [[ $(( "${4:-0}" % 2 )) -ne 0 ]] && i=$(( length - window - i ))
     tput rc
     printf "[%s]" "${pad_message:i:window}"
-    sleep "${speed}"
+    sleep "${3:-0.1}"
   done
   [[ "${5:-0}" -ne 0 ]] && tput rc
+  tput cvvis
 }
 
 printf "Performing some task: "
