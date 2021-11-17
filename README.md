@@ -1,4 +1,4 @@
 # Collection of useful bash utilities
 
-* scrolling text function
+* scroll: scrolling text function
 
