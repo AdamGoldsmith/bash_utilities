@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Scrolling text
+# Adam Goldsmith
 
 scroll() {
   # USAGE: scroll ["text to display" (default: "message")] [display window size (default: 4)] [speed (default: 0.1)] [direction (default: 0)] [restore cursor (default 0)]
