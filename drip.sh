@@ -26,5 +26,14 @@ drip() {
   [[ "${3:-0}" -ne 0 ]] && tput cuf 1
 }
 
-drip 5 0.1 1
+# Example usage..
+# Drip 10 times from random area inside 40 character window
+for _ in {0..9}
+do
+  rand=$(shuf -i 0-40 -n1)
+  printf "%*s" "${rand}" ""
+  drip
+  tput el1
+  tput cub "${rand}"
+done
 
