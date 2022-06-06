@@ -8,7 +8,6 @@ ride() {
   # speed is in seconds
   # Example: To ride the bike in a 20 character window at 1 character every 0.05 seconds...
   # ride 20 0.05
-  # local window="${1:-8}"
   local bdata=(
     "   __o"
     " _ \<_"
