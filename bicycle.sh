@@ -9,16 +9,9 @@ ride() {
   # accelerates to a maximum speed of 5 frames per second (1 per 0.2 secs)
   # Example: To ride the bike in a 80 character window at 1 character every 0.4 seconds with 5% acceleration...
   # ride 80 0.4 5
-  local bdata=(
-    "   __o"
-    " _ \<_"
-  )
-  local pdata=(
-    '/'
-    '-'
-    '\'
-    '|'
-  )
+  local bdata=('   __o' ' _ \<_')
+  # shellcheck disable=SC1003
+  local pdata=('/' '-' '\' '|')
   local speed="${2:-0.1}"
   local acc
   acc=$(bc <<< "scale=2; 1-${3:-0}/100")
