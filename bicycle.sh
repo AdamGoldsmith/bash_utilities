@@ -10,7 +10,7 @@ ride() {
   # ride 10 0.05
   # local window="${1:-8}"
   local bdata=(
-    "   __@"
+    "   __o"
     " _ \<_"
   )
   local pdata=(
