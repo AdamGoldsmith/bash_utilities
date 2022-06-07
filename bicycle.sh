@@ -3,12 +3,12 @@
 # Scrolling animated bicycle
 # Adam Goldsmith
 
-ride() {
-  # USAGE: ride [display width (default: 20)] [speed (default: 0.1)] [acceleration (default: 0%)]
+bicycle() {
+  # USAGE: bicycle [display width (default: 20)] [speed (default: 0.1)] [acceleration (default: 0%)]
   # speed is in seconds
   # accelerates to a maximum speed of 5 frames per second (1 per 0.2 secs)
   # Example: To ride the bike in a 80 character window at 1 character every 0.4 seconds with 5% acceleration...
-  # ride 80 0.4 5
+  # bicycle 80 0.4 5
   local window="${1:-20}"
   local bdata=('   __o' ' _ \<_')
   local pdata=('(_)/(_)' '(_)-(_)' '(_)\(_)' '(_)|(_)')
@@ -45,4 +45,4 @@ ride() {
   printf "\n"
 }
 
-ride 80 0.4 5
+bicycle 80 0.4 5
