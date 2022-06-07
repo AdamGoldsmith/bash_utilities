@@ -36,12 +36,13 @@ ride() {
     do
       printf "%s\n" "${b:$(( length - window - i )):window}"
     done
-    printf "%s\n" "${pdata[$(( i % 4 ))]:$(( length - window - i )):window}"
+    printf "%s" "${pdata[$(( i % 4 ))]:$(( length - window - i )):window}"
     sleep "${speed}"
     # Have to divide by 1 to reset the scale - see bc documentation
     [[ $(bc <<< "${speed}*100/1") -gt 1 ]] && speed=$(bc <<< "scale=4; ${speed}*${acc}")
   done
   tput cvvis
+  printf "\n"
 }
 
 ride 80 0.4 5
