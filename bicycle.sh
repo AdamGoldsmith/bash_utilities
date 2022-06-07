@@ -16,6 +16,8 @@ ride() {
   local acc
   acc=$(bc <<< "scale=2; 1-${3:-0}/100")
 
+  printf "\n\n\n"
+  tput cuu1; tput cuu1; tput cuu1
   tput sc
   tput civis
   for i in $(seq 0 1 "${1:-8}")
@@ -34,4 +36,3 @@ ride() {
 }
 
 ride 80 0.4 5
-
